@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="name-of-project" default="build">
-    <target name="build" depends="prepare,vendors,parameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
-
+<project name="name-of-project" default="build">    
+    <target name="build" depends="prepare,composer,vendors,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
+    
     <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
 
     <target name="tools-parallel" description="Run tools in parallel">
@@ -134,16 +134,16 @@
         </exec>
     </target>
 
-    <target name="vendors" description="Update vendors">
-        <exec executable="${basedir}/bin/vendors" failonerror="true">
-            <arg value="update" />
+    <target name="composer" description="Install composer.phar">
+        <exec executable="bash">
+            <arg value="-c"/>
+            <arg value="curl -s http://getcomposer.org/installer | php"/>
         </exec>
     </target>
 
-    <target name="parameters" description="Copy parameters">
-        <exec executable="cp" failonerror="true">
-            <arg path="app/config/parameters.ini.template" />
-            <arg path="app/config/parameters.ini" />
+    <target name="vendors" description="Install vendors">
+        <exec executable="${basedir}/composer.phar" failonerror="true">
+            <arg value="install" />
         </exec>
     </target>
 </project>
