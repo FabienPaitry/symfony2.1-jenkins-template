@@ -1,7 +1,7 @@
-Symfony2 Jenkins Template
+Symfony2.1 Jenkins Template
 =========================
 
-Based on Sebastian Bergmann's template: http://github.com/sebastianbergmann/php-jenkins-template
+Based on xurumelous' template: https://github.com/xurumelous/symfony2-jenkins-template
 
 ### Installation
 
