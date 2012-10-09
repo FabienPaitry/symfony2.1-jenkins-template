@@ -8,7 +8,7 @@ Based on xurumelous' template: https://github.com/xurumelous/symfony2-jenkins-te
 Follow the installation steps from [Jenkins PHP](http://jenkins-php.org) for installing needed deendencies (ignore the xml files from there) and follow with these particular steps:
 
 1. Clone this repository:
-    git clone git@github.com:xurumelous/symfony2-jenkins-template
+    git clone git@github.com:alex88/symfony2.1-jenkins-template.git
 
 2. Move the jenkins folder to `[SYMFONY2_ROOT]/app/Resources/` inside your Symfony2 project.
 
